@@ -1,0 +1,6 @@
+[submodule "lada-server"]
+	path = lada-server
+	url = https://github.com/OpenBfS/lada-server.git
+[submodule "lada-client"]
+	path = lada-client
+	url = https://github.com/OpenBfS/lada-client.git

@@ -1,0 +1,27 @@
+version: '3.5'
+services:
+  lada-client:
+    build:
+      context: lada-client
+    depends_on:
+      - lada_db
+      - lada-server
+    networks:
+     - lada-net
+    ports:
+     - "28080-28084:80-84"
+  lada-server:
+    build:
+      context: lada-server
+    depends_on:
+      - lada_db
+    networks:
+     - lada-net
+  lada_db:
+    build:
+      context: lada-server/db_schema
+    networks:
+     - lada-net
+networks:
+  lada-net:
+    name: lada-net
